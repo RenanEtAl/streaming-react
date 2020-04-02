@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import './Modal.styles.css'
 
 const Modal = ({ onDismiss, title, content, actions }) => {
   
@@ -8,11 +9,11 @@ const Modal = ({ onDismiss, title, content, actions }) => {
     <div onClick={onDismiss} className="ui dimmer modals visible active">
       <div
         onClick={e => e.stopPropagation()}
-        className="ui standard modal visible active"
+        className="modal-container ui standard modal visible active"
       >
-        <div className="header">{title}</div>
-        <div className="content">{content}</div>
-        <div className="actions">{actions}</div>
+        <div className="header modal-title">{title}</div>
+        <div className="content modal-content">{content}</div>
+        <div className="actions modal-action">{actions}</div>
       </div>
     </div>,
     // attach it to modal div in index.html

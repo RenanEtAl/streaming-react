@@ -1,9 +1,10 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchStream, editStream } from "../../redux/stream/stream.actions";
-import StreamForm from "./stream-form.component";
+import { fetchStream, editStream } from "../../../redux/stream/stream.actions";
+import StreamForm from "../form/stream-form.component";
 import { Link } from "react-router-dom";
+import './edit-stream.styles.css'
 
 class StreamEdit extends Component {
   componentDidMount() {
@@ -26,7 +27,7 @@ class StreamEdit extends Component {
           initialValues={_.pick(this.props.stream, "title", "description")}
           onSubmit={this.onSubmit}
         />
-        <Link to="/" className="ui button">
+        <Link to="/" className="cancel-button ui button">
           Cancel
         </Link>
       </div>

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchStreams } from "../../redux/stream/stream.actions";
+import { fetchStreams } from "../../../redux/stream/stream.actions";
 import { Link } from "react-router-dom";
+import "./list-stream.styles.css";
 
 class StreamList extends Component {
   componentDidMount() {
@@ -15,7 +16,7 @@ class StreamList extends Component {
           <Link to={`/streams/edit/${stream.id}`} className="ui button purple">
             Edit
           </Link>
-          <Link to={`/streams/delete/${stream.id}`} className="ui button">
+          <Link to={`/streams/delete/${stream.id}`} className="del-button ui button">
             Delete
           </Link>
         </div>
@@ -27,7 +28,10 @@ class StreamList extends Component {
     if (this.props.isSignedIn) {
       return (
         <div style={{ textAlign: "right" }}>
-          <Link to="/streams/create" className="ui button primary">
+          <Link
+            to="/streams/create"
+            className="create-button ui button primary"
+          >
             Create Stream
           </Link>
         </div>
@@ -45,7 +49,7 @@ class StreamList extends Component {
             <Link to={`/streams/${stream.id}`} className="header">
               {stream.title}
             </Link>
-            <hr/>
+            <hr />
             <div className="description">{stream.description}</div>
             {this.renderAdmin(stream)}
           </div>
@@ -61,7 +65,7 @@ class StreamList extends Component {
 
     return (
       <div>
-        <h2>Live Streams</h2>
+        <h2 className='h2'>Live Streams</h2>
         <div className="ui celled list">{this.renderList()}</div>
         {this.renderCreate()}
       </div>

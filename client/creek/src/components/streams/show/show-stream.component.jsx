@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchStream } from "../../redux/stream/stream.actions";
+import { fetchStream } from "../../../redux/stream/stream.actions";
 import flv from "flv.js";
+import "./show-stream.styles.css";
 
 class StreamShow extends Component {
   constructor(props) {
@@ -43,8 +44,11 @@ class StreamShow extends Component {
 
     return (
       <div>
-        <h1>{title}</h1>
-        <video ref={this.videoRef} style={{ width: "100%" }} controls />
+        <h1 className="h1">{title}</h1>
+        <div className="video-container">
+          <video ref={this.videoRef} style={{ width: "100%" }} controls />
+        </div>
+
         <h5>{description}</h5>
       </div>
     );

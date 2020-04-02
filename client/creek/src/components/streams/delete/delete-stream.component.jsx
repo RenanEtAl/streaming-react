@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import Modal from "../Modal.component";
+import Modal from "../../modal/Modal.component";
 import { Link } from "react-router-dom";
-import { fetchStream, deleteStream } from "../../redux/stream/stream.actions";
+import {
+  fetchStream,
+  deleteStream
+} from "../../../redux/stream/stream.actions";
 import { connect } from "react-redux";
-import history from "../../history";
+import history from "../../../history";
 
 class StreamDelete extends Component {
   componentDidMount() {

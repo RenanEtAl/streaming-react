@@ -1,0 +1,12 @@
+.modal-container,
+.modal-title,
+.modal-content {
+  border-bottom: 0 none !important;
+}
+
+.modal-action {
+  border-top: 0 none !important;
+  background-color: white !important;
+}
+
+

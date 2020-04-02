@@ -1,0 +1,9 @@
+.creek-container {
+  border-radius: 6px;
+  background: #ecf0f3;
+  box-shadow: 6px 6px 10px #a7aaaf, -6px -6px 10px #ffffff;
+}
+
+.header-container {
+  border-bottom: 0 none !important;
+}

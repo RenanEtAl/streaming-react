@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { signIn, signOut } from "../redux/auth/auth.actions";
-
+import { signIn, signOut } from "../../redux/auth/auth.actions";
+import "./GoogleAuth.styles.css";
 class GoogleAuth extends React.Component {
   componentDidMount() {
     window.gapi.load("client:auth2", () => {
@@ -41,14 +41,20 @@ class GoogleAuth extends React.Component {
       return null;
     } else if (this.props.isSignedIn) {
       return (
-        <button onClick={this.onSignOutClick} className="ui purple google button">
+        <button
+          onClick={this.onSignOutClick}
+          className="ui google button"
+        >
           <i className="google icon" />
           Sign Out
         </button>
       );
     } else {
       return (
-        <button onClick={this.onSignInClick} className="ui purple google button">
+        <button
+          onClick={this.onSignInClick}
+          className="ui google button"
+        >
           <i className="google icon" />
           Sign In with Google
         </button>
@@ -57,7 +63,7 @@ class GoogleAuth extends React.Component {
   }
 
   render() {
-    return <div>{this.renderAuthButton()}</div>;
+    return <div className='google-button'>{this.renderAuthButton()}</div>;
   }
 }
 

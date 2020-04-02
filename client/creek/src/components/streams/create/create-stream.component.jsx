@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { createStream } from "../../redux/stream/stream.actions";
-import StreamForm from "./stream-form.component";
+import { createStream } from "../../../redux/stream/stream.actions";
+import StreamForm from "../form/stream-form.component";
 
-class StreamCreate extends React.Component {
+class StreamCreate extends Component {
   onSubmit = formValues => {
     this.props.createStream(formValues);
   };
